@@ -1,4 +1,4 @@
-module fsm(x, y, clk, rst, z);
+module fsm(clk, rst, x, y, z);
 
   `define S1    1
   `define S5    2
@@ -12,10 +12,13 @@ module fsm(x, y, clk, rst, z);
   input y;
   input clk;
   input rst;
-  output z;
+  output [2:0] z;
 
+  reg [2:0] count;
   reg [2:0] state;
   reg [2:0] nextstate;
+
+  assign z = count;
 
   always @(posedge clk or posedge rst)
     if(rst) state <= `S7;
