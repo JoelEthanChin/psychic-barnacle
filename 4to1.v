@@ -1,25 +1,23 @@
-module 4to1(a, b, c, d, s1, s2, z);
+module mux4to1(sig, sel, z);
 
-  `define `d0 4'b1000
-  `define `d1 4'b0100
-  `define `d2 4'b0010
-  `define `d3 4'b0001
-
-  input a;
-  input b;
-  input c;
-  input d;
-  input s1;
-  input s2;
+  input [3:0] sig;
+  input [1:0] sel;
   output z;
 
-  reg [3:0] state;
+  reg z;
 
-  always(a or b or c or d) begin
-    if(a&~b&~c&~d) state = `d0;
-    else if(~a&b&~c&~d) state = `d1;
-    else if(~a&~b&c&~d) state = `d2;
-    else if(~a&~b&~c&d) state = `d3;
+  parameter s0 = 2'b 00;
+  parameter s1 = 2'b 01;
+  parameter s2 = 2'b 11;
+  parameter s3 = 2'b 10;
+
+  always(sig or sel) begin
+    case(sig)
+      `S0: out = sig[0];
+      `S1: out = sig[1];
+      `S2: out = sig[2];
+      `S3: out = sig[3];
+      default: out = sig[0];
   end
 
   always @(state)
