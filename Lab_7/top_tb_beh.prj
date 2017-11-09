@@ -1,6 +1,0 @@
-verilog work "MC.v"
-verilog work "lfsr.v"
-verilog work "div256.v"
-verilog work "top.v"
-verilog work "top_tb.v"
-verilog work "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"

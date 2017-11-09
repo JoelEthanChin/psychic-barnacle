@@ -1,4 +1,0 @@
-verilog work "MC.v"
-verilog work "lfsr.v"
-verilog work "div256.v"
-verilog work "top.v"
