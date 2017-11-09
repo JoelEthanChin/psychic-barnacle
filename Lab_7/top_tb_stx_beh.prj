@@ -1,0 +1,6 @@
+verilog isim_temp "MC.v"
+verilog isim_temp "lfsr.v"
+verilog isim_temp "div256.v"
+verilog isim_temp "top.v"
+verilog isim_temp "top_tb.v"
+verilog isim_temp "C:/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
