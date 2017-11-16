@@ -11,7 +11,7 @@
 //      - a win shows up as either (1 1 1 0 0 0 0) if WL or (0 0 0 0 1 1 1) if WR
 //----------------------------------------------------------------------------------------
 
-module scorer(winrnd, right, leds_on, clk, rst, score);
+module scorer(winrnd, right, leds_on, clk, rst, score, tie);
 	`define WR     4'b1001
 	`define R3     4'b0001
 	`define R2		4'b0010
@@ -28,6 +28,7 @@ module scorer(winrnd, right, leds_on, clk, rst, score);
 	input right;		// indicates who was pushed first 
 	input leds_on;		// used to indicate whether the light's were on to determine a jump-the-light
 	input winrnd;		// one-cycle pulse that someone has pushed
+	input tie;
 	output [6:0] score;	//  MSB 5 [WL L2 L1 0 R1 R2 WR] LSB 0
 
 	reg [6:0] score;	
