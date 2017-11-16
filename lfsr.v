@@ -1,12 +1,16 @@
 //linear feedback shift register
+/*This module uses slowenable as a reduced clock pulse
+*as one input to control how frequent the MC should check the current
+*state using rout
+*/
 module lfsr(slowenable, rst, rout);
 
 	input slowenable, rst;
 	output rout;
-	
+
 	reg [9:0]lfsr;
 	assign rout = lfsr[9];
-	
+
 	always @(posedge slowenable or posedge rst)
 		begin
 			if(rst) lfsr[9:0] <=1;

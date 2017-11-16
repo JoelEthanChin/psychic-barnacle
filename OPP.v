@@ -1,4 +1,9 @@
 //One Pulse Per Press
+/*This module prevents any "hardware bounching"
+*caused by the physical buttons using a
+*synchronized push from the synchronizer
+*when the signal stabilizes
+*/
 module opp(sypush,clk,rst,winrnd);
 
 	input sypush, clk, rst;
